@@ -1,0 +1,27 @@
+version: '3'                                          
+
+services:                      
+  selenium:                                             
+    image: selenium/standalone-chrome                   
+    ports:
+    - '4444:4444'
+    restart: always
+    volumes:
+    - C:\Users\dasilvaj2154\Documents\Projets\ROBOT\app:/app
+
+  robotnantes:
+    build: 
+      context: .
+    #command: ["sh", "-c", "python main.py"]
+    #entrypoint: /etc/cron.d/
+    command: ["cron", "-f"]
+    #command: ['/usr/local/bin/python3','/app/main.py']
+    depends_on:
+    - selenium
+    volumes:
+    - C:\Users\dasilvaj2154\Documents\Projets\ROBOT\app:/app
+
+#volumes:
+#  C:\Users\dasilvaj2154\Documents\Projets\TEST\app:
+
+

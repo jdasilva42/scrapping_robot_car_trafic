@@ -1,0 +1,3 @@
+#STRART CRONTAB
+* * * * * /usr/local/bin/python3 /app/main.py 
+#END 
